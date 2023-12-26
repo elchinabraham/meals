@@ -8,12 +8,10 @@ class MealsScreen extends StatelessWidget {
     super.key,
     this.title,
     required this.meals,
-    required this.onToogleFavorite,
   });
 
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) onToogleFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,6 @@ class MealsScreen extends StatelessWidget {
       itemBuilder: (ctx, index) {
         return MealItem(
           meal: meals[index],
-          onToogleFavorite: onToogleFavorite,
         );
       },
     );
